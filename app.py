@@ -10,7 +10,7 @@ from tkinter import Canvas
 ctk.set_appearance_mode("Dark")
 
 app = ctk.CTk()
-app.title("Rain Clicker")
+app.title("Storm Clicker")
 app.geometry("520x380")
 app.resizable(False, False)
 
@@ -119,7 +119,7 @@ def create_rain():
         drop = canvas.create_line(
             x, y,
             x + 6, y + length,
-            fill="#0c83eb",
+            fill="#064f8f",
             width=1,
             stipple="gray50"
         )
@@ -158,7 +158,7 @@ create_rain()
 threading.Thread(target=animate_rain, daemon=True).start()
 
 # ---------------- UI ----------------
-title = ctk.CTkLabel(app, text="RAIN CLICKER", font=("Segoe UI", 26, "bold"))
+title = ctk.CTkLabel(app, text="STORM CLICKER", font=("Segoe UI", 26, "bold"))
 title.place(x=150, y=20)
 
 
@@ -168,7 +168,7 @@ def set_cps(v):
     cps_label.configure(text=f"{cps} CPS")
 
 
-slider = ctk.CTkSlider(app, from_=1, to=200, command=set_cps)
+slider = ctk.CTkSlider(app, from_=1, to=100, command=set_cps)
 slider.set(10)
 slider.place(x=140, y=90)
 
